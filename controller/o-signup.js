@@ -43,7 +43,7 @@ export const organisationSignup = async (req, res) => {
       maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     });
 
-    return res.status(201).json({ message: "Organization Registered Successfully." });
+    return res.status(200).json({ message: "ORG REGISTER successful", token });
 
   } catch (error) {
     console.error("Signup Error:", error);
