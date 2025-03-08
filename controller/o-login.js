@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 export const organisationLogin = async (req, res) => {
   try {
     let { username, password } = req.body;
-
+    
     // Validate input
     if (!username || !password) {
       return res.status(400).json({ error: "Username and password are required." });
