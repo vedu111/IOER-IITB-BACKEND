@@ -14,10 +14,12 @@ app.use(cookieParser());
 
 //import routes
 import BaseAuthRoutes from "./Routes/BaseUserAuthRoutes/userAuthRoutes.js"
+import OrgDetailRoutes from "./Routes/BaseUserAuthRoutes/userDetailRoutes.js"
 
 
 //use routes
 app.use(BaseAuthRoutes)
+app.use(OrgDetailRoutes)
 
 app.get("/",(req,res)=>{
   res.json({"msg":"working"})

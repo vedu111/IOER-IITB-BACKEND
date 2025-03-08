@@ -3,6 +3,7 @@ import { baseUserSignup } from "../../controller/b-signup.js";
 import { organisationSignup } from "../../controller/o-signup.js";
 import { organisationLogin } from "../../controller/o-login.js";
 import { checkOrgLogin } from "../../middleware/orgAuthMiddleware.js";
+import { organisationLogout } from "../../controller/o-logout.js";
 
 
 const router = express.Router();
@@ -20,9 +21,16 @@ router.post("/api/v1/org/signup",
 
 //OraganisationLogin
 router.post("/api/v1/org/login",
-checkOrgLogin,
+  checkOrgLogin,
   organisationLogin
 )
+
+//OraganisationLogout
+router.post("/api/v1/org/logout",
+  checkOrgLogin,
+  organisationLogout
+)
+
 
 
 
