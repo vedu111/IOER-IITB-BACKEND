@@ -98,5 +98,17 @@ router.post("/api/v1/org/shipment/create", checkOrgLogin, async (req, res) => {
 });
 
 
+router.get("/api/v1/org/shipments", checkOrgLogin, async (req, res) => {
+  try {
+    const id = req._id
+    const data = await Shipment.find({userId:id})
+    res.send(data)
+  } catch (error) {
+    console.error("Error creating shipment:", error);
+    return res.status(500).json({ error: "Internal server error. Please try again later." });
+  }
+});
+
+
 
 export default router
