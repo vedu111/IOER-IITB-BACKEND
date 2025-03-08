@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const ShipmentSchema = new mongoose.Schema({
   organizationName: { type: String, required: true }, // Made required
-  
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "OrganizationCredentials", required: false }, 
   organizationContact: {
     contactNumber: { 
       type: Number, 
-      required: true,
+      required: false,
       validate: {
         validator: function (num) {
           return /^[0-9]{10,15}$/.test(num.toString()); // Ensures a valid phone number
@@ -16,7 +16,7 @@ const ShipmentSchema = new mongoose.Schema({
     },
     email: { 
       type: String, 
-      required: true, 
+      required: false,
       match: [/^\S+@\S+\.\S+$/, "Invalid email format."] 
     }
   },
@@ -89,4 +89,4 @@ ShipmentSchema.pre("save", function (next) {
   next();
 });
 
-export default mongoose.model("Shipment", ShipmentSchema);
+export const Shipment = mongoose.model("Shipment", ShipmentSchema);
