@@ -1,0 +1,67 @@
+# Node modules directory
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# dotenv environment variables file
+.env
+
+# Mac system files
+.DS_Store
+
+# Temporary files and directories
+tmp/
+temp/
+
+# Build directory
+dist/
+build/
+
+# Coverage directory
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Optional typescript cache
+*.tsbuildinfo
+
+# PM2 process file
+pm2-logs/
+
+# Ignore test reports
+/test/**/*.xml
+/reports/
+
+# Ignore Yarn files
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+Thumbs.db
+*.DS_Store
+
+# JetBrains IDE
+/.idea/
+*.iml
+
+## Or on Windows
+desktop.ini
+
+# Optional Typings directory
+typings/
+
+# Optional REPL history
+.node_repl_history
+
