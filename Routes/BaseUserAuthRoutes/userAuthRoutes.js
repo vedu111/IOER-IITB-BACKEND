@@ -21,7 +21,7 @@ router.post("/api/v1/org/signup",
 
 //OraganisationLogin
 router.post("/api/v1/org/login",
-  checkOrgLogin,
+
   organisationLogin
 )
 
