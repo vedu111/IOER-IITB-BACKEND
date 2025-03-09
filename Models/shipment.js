@@ -71,7 +71,8 @@ const ShipmentSchema = new mongoose.Schema({
 
       totalWeight: { type: Number, required: false, default: 0 } // Default 0
     }
-  ]
+  ],
+  status:{type:String , default:"pending"}
 });
 
 // 🔹 **Pre-save Hook to Calculate & Validate Total Weight**

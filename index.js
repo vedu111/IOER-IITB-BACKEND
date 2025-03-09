@@ -7,11 +7,21 @@ dotenv.config();
 const app  = express()
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://l4-tct-deployment.vercel.app','http://127.0.0.1:5500','https://backend.thecatalysttree.com','https://frontend.thecatalysttree.com',"https://www.thecatalysttree.com","https://thecatalysttree.com"], 
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], 
-  allowedHeaders: ["Content-Type", "Authorization"], 
-  credentials: true,  
-}))
+  origin: [
+    'http://localhost:3000', 
+    'http://localhost:5173',  // Add this origin
+    'https://l4-tct-deployment.vercel.app',
+    'http://127.0.0.1:5500',
+    'https://backend.thecatalysttree.com',
+    'https://frontend.thecatalysttree.com',
+    "https://www.thecatalysttree.com",
+    "https://thecatalysttree.com"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
+
 //connect db
 connectDatabase()
 

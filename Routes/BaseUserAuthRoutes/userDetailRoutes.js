@@ -110,5 +110,22 @@ router.get("/api/v1/org/shipments", checkOrgLogin, async (req, res) => {
 });
 
 
+router.post("/api/v1/fetch/shipment",async(req,res)=>{
+  const {shipmentId} = req.body;
+  const Shipmenti = await Shipment.findById(shipmentId)
+  console.log(Shipmenti)
+  res.send(Shipmenti)
+})
+
+
+router.post("/api/v1/update/shipment/status",async(req,res)=>{
+  const {shipmentId,status} = req.body;
+  const Shipmenti = await Shipment.findByIdAndUpdate(shipmentId,{$set:{status:status}})
+  console.log(Shipmenti)
+  res.send(Shipmenti)
+})
+
+
+
 
 export default router

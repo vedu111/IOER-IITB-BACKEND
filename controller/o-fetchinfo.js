@@ -2,6 +2,7 @@ import { OrgUserDetails } from "../Models/OrgUserDetails.js";
 
 export const organisationFetchInfo = async (req, res) => {
   try {
+   
     // Extract organization ID from request
     const id = req._id 
     
@@ -11,7 +12,7 @@ export const organisationFetchInfo = async (req, res) => {
 
     // Fetch organization details
     const data = await OrgUserDetails.findOne({ userId: id });
-
+    
     // If no data found, return a 404 response
     if (!data) {
       return res.status(404).json({ error: "Organization details not found." });
